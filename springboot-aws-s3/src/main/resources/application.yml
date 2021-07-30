@@ -1,0 +1,26 @@
+server:
+  port: ${APP_PORT:80}
+
+spring:
+  servlet:
+    multipart:
+      file-size-threshold: "10MB"
+  main:
+    banner-mode: off
+
+aws:
+  region: "us-east-2"
+  s3:
+    bucket:
+      name: "driving-academy-statics"
+
+swagger:
+  service:
+    title: "Springboot AWS S3 Services"
+    description: "Springboot AWS S3 Services"
+    version: "v1"
+    termsOfServiceUrl: ""
+    contact:
+      name: "Alexander Perez"
+      website: ""
+      email: "alextase89@gmail.com"

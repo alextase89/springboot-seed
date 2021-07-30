@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+
+    <id>${profileActive}-${project.version}</id>
+
+    <!-- Packing type, if there are N types of packages, it will hit N types of packages -->
+    <formats>
+        <format>zip</format>
+    </formats>
+
+    <includeBaseDirectory>true</includeBaseDirectory>
+
+    <fileSets>
+        <!-- Export all files in the src/bin directory to the packaged bin directory -->
+        <fileSet>
+            <directory>${basedir}/../deploy/bin</directory>
+            <outputDirectory>bin</outputDirectory>
+            <fileMode>0755</fileMode>
+            <filtered>true</filtered>
+            <includes>
+                <include>**.sh</include>
+            </includes>
+        </fileSet>
+
+        <!--- Specify the configuration file in the output target/classes to the config Directory -->
+        <fileSet>
+            <directory>${basedir}/target/classes</directory>
+            <outputDirectory>config</outputDirectory>
+            <fileMode>0644</fileMode>
+            <includes>
+                <include>application.yml</include>
+                <include>application-${profileActive}.yml</include>
+                <include>mapper/**/*.xml</include>
+                <include>static/**</include>
+                <include>templates/**</include>
+                <include>*.xml</include>
+                <include>*.properties</include>
+            </includes>
+        </fileSet>
+
+        <!--- Packing third-party dependencies into lib directories -->
+        <fileSet>
+            <directory>${basedir}/target/lib</directory>
+            <outputDirectory>lib</outputDirectory>
+            <fileMode>0755</fileMode>
+        </fileSet>
+
+        <!-- Package the project startup jar into the boot directory -->
+        <fileSet>
+            <directory>${basedir}/target</directory>
+            <outputDirectory>boot</outputDirectory>
+            <fileMode>0755</fileMode>
+            <includes>
+                <include>${project.build.finalName}.jar</include>
+            </includes>
+        </fileSet>
+
+        <!-- Contains files in the root directory -->
+        <fileSet>
+            <directory>${basedir}</directory>
+            <includes>
+                <include>NOTICE</include>
+                <include>LICENSE</include>
+                <include>*.md</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>
