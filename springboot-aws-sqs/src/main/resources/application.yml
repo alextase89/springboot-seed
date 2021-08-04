@@ -1,0 +1,26 @@
+server:
+  port: ${APP_PORT:9002}
+
+spring:
+  main:
+    banner-mode: off
+
+aws:
+  region: "us-east-1"
+  endpoint: "http://localhost:4566"
+  access-key: "test"
+  secret-key: "test"
+  sqs:
+    async:
+      queue-name: "async-user-queue"
+
+swagger:
+  service:
+    title: "Springboot AWS SQS Services"
+    description: "Springboot AWS SQS Services"
+    version: "v1"
+    termsOfServiceUrl: ""
+    contact:
+      name: "Alexander Perez"
+      website: ""
+      email: "alextase89@gmail.com"

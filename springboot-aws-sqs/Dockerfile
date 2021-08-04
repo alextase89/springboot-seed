@@ -1,5 +1,5 @@
 FROM openjdk:8-jre-alpine
-ARG APP_PORT=9001
+ARG APP_PORT=9002
 
 ENV APP_PORT=${APP_PORT}
 ENV GLIBC_VER=2.31-r0
@@ -36,6 +36,5 @@ COPY maven/ ./
 RUN adduser -D -g '' -h /app -u 10001 app \
 	&& chown -R app:app /app
 USER app
-ENV APP_PORT=${APP_PORT}
 EXPOSE ${APP_PORT}
-ENTRYPOINT ["/bin/sh", "./bin/startup.sh"]
+CMD ["/bin/sh", "./bin/startup.sh"]

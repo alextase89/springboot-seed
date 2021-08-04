@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.cubans</groupId>
+		<version>0.0.1</version>
+		<artifactId>springboot-seed</artifactId>
+		<relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
+	</parent>
+
+	<artifactId>springboot-aws-sqs</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>springboot-aws-sqs</name>
+	<description>Demo project for Spring Boot</description>
+
+	<properties>
+		<starter.class>com.cubans.awssqs.SpringbootAwsSqsApplication</starter.class>
+		<spring.cloud.aws.messaging.version>2.2.6.RELEASE</spring.cloud.aws.messaging.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-aws-messaging</artifactId>
+			<version>${spring.cloud.aws.messaging.version}</version>
+		</dependency>
+	</dependencies>
+
+</project>
