@@ -3,7 +3,6 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -19,11 +18,18 @@
     <properties>
         <java.version>8</java.version>
         <swagger.version>2.9.2</swagger.version>
+        <springdoc.version>1.5.10</springdoc.version>
         <apache.io.version>2.6</apache.io.version>
         <caffeine.version>2.5.5</caffeine.version>
         <aws.sdk.version>1.11.1000</aws.sdk.version>
         <fabric8.version>0.36.1</fabric8.version>
     </properties>
+
+    <modules>
+        <module>library</module>
+        <module>springboot-aws-s3</module>
+        <module>springboot-aws-sqs</module>
+    </modules>
 
     <dependencies>
         <dependency>
@@ -49,15 +55,22 @@
         </dependency>
 
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>${swagger.version}</version>
+            <groupId>com.cubans</groupId>
+            <artifactId>library</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+
+        <!-- SpringDoc -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>${springdoc.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>${swagger.version}</version>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-data-rest</artifactId>
+            <version>${springdoc.version}</version>
         </dependency>
 
         <dependency>
@@ -105,7 +118,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.cubans.awss3.SpringbootAwsS3Application</mainClass>
+                            <mainClass>${starter.class}</mainClass>
                             <classpathPrefix>../lib</classpathPrefix>
                             <addClasspath>true</addClasspath>
                         </manifest>
