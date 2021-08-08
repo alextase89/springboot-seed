@@ -23,10 +23,10 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Build Library Common
+      - name: Build Library
         run: |
-          cd springboot-aws-s3
-          mvn install
+          cd library
+          mvn --batch-mode --update-snapshots verify install
 
       - name: Build AWS-S3
         run: |
