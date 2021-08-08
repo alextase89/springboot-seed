@@ -26,7 +26,7 @@ jobs:
       - name: Build Library Common
         run: |
           cd springboot-aws-s3
-          mvn --batch-mode --update-snapshots verify install
+          mvn install
 
       - name: Build AWS-S3
         run: |
