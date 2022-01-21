@@ -20,7 +20,7 @@
         <java.version>16</java.version>
         <swagger.version>2.9.2</swagger.version>
         <springdoc.version>1.5.10</springdoc.version>
-        <apache.io.version>2.6</apache.io.version>
+        <apache.io.version>2.7</apache.io.version>
         <caffeine.version>2.5.5</caffeine.version>
         <aws.sdk.version>1.11.1000</aws.sdk.version>
         <fabric8.version>0.36.1</fabric8.version>
