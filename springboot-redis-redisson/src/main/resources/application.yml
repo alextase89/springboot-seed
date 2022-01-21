@@ -1,0 +1,25 @@
+server:
+  port: ${APP_PORT:9003}
+
+spring:
+  main:
+    banner-mode: off
+
+redisson:
+  server:
+    address: "redis://localhost:6375"
+  replicate:
+    mode: false
+  lock:
+    lease-ttl: 180
+
+swagger:
+  service:
+    title: "Springboot Redis with Redisson"
+    description: "Springboot Redis with Redisson"
+    version: "v1"
+    termsOfServiceUrl: ""
+    contact:
+      name: "Alexander Perez/Rodolfo Echemendia"
+      website: ""
+      email: "alextase89@gmail.com;rodobarcaaa@gmail.com"

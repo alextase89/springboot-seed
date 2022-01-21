@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  redis:
+    container_name: "redis_container"
+    image: "redis"
+    network_mode: bridge
+    ports:
+      - "6379:6379"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+    volumes:
+      - ./data:/data

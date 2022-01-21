@@ -3,6 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -16,19 +17,21 @@
     <version>0.0.1</version>
 
     <properties>
-        <java.version>8</java.version>
+        <java.version>16</java.version>
         <swagger.version>2.9.2</swagger.version>
         <springdoc.version>1.5.10</springdoc.version>
         <apache.io.version>2.6</apache.io.version>
         <caffeine.version>2.5.5</caffeine.version>
         <aws.sdk.version>1.11.1000</aws.sdk.version>
         <fabric8.version>0.36.1</fabric8.version>
+        <redisson.version>3.15.0</redisson.version>
     </properties>
 
     <modules>
         <module>library</module>
         <module>springboot-aws-s3</module>
         <module>springboot-aws-sqs</module>
+        <module>springboot-redis-redisson</module>
     </modules>
 
     <dependencies>
@@ -217,11 +220,6 @@
                     <images>
                         <image>
                             <name>${project.name}</name>
-                            <run>
-                                <ports>
-                                    <port>9001:9001</port>
-                                </ports>
-                            </run>
                             <build>
                                 <dockerFile>./Dockerfile</dockerFile>
                                 <assemblies>
