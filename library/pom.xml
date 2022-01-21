@@ -20,6 +20,7 @@
         <maven.compiler.target>8</maven.compiler.target>
         <springdoc.version>1.5.10</springdoc.version>
         <aws.sdk.version>1.11.1000</aws.sdk.version>
+        <redisson.version>3.15.0</redisson.version>
     </properties>
 
     <dependencies>
@@ -52,6 +53,13 @@
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-java-sdk-core</artifactId>
             <version>${aws.sdk.version}</version>
+        </dependency>
+
+        <!-- redisson library -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>${redisson.version}</version>
         </dependency>
     </dependencies>
 </project>

@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM adoptopenjdk/openjdk16:jre-16.0.1_9-alpine
 ARG APP_PORT=9002
 
 ENV APP_PORT=${APP_PORT}
